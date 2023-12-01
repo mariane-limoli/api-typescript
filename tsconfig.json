@@ -3,7 +3,7 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "noEmitOnError": true,
+    "noEmitOnError": true
   },
-  "include": ["./src/**/*", "./server.ts"]
+  "include": ["./src/**/*", "./server.js"]
 }

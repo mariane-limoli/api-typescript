@@ -17,7 +17,7 @@ function criaPet(id, nome, especie, idade, adotado) {
   };
 }
 
-let id = "0";
+let id = 0;
 function geraId() {
   id = id + 1;
   return id;

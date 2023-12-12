@@ -30,7 +30,7 @@ function geraId() {
 }
 
 app.post("/pets", (_, res) => {
-  const pet1 = criaPet(geraId(), "Bolt", "cachorro", 3, false);
+  const pet1 = criaPet(geraId(), "Bolt", "cachorrooo", 3, false);
   const pet2 = criaPet(geraId(), "Mel", "gato", 2, false);
 
   res.send([pet1, pet2]);

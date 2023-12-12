@@ -1,10 +1,13 @@
-import express from "express";
+import express, { Response } from "express";
+
+import router from "./routes";
 
 const app = express();
 app.use(express.json());
+router(app);
 
-app.get("/", (_, res) => {
-  res.send("Bem vindo ao curso de TypeScript!");
+app.get("/", (_, res: Response) => {
+  res.send("Bem vindo ao curso de TypeScript!!!!");
 });
 
 function criaPet(
@@ -30,7 +33,7 @@ function geraId() {
 }
 
 app.post("/pets", (_, res) => {
-  const pet1 = criaPet(geraId(), "Bolt", "cachorrooo", 3, false);
+  const pet1 = criaPet(geraId(), "Bolt", "cachorro", 3, false);
   const pet2 = criaPet(geraId(), "Mel", "gato", 2, false);
 
   res.send([pet1, pet2]);

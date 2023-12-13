@@ -1,5 +1,7 @@
 import express, { Response } from "express";
 
+import PetController from "./controller/PetController";
+// import PetController from "./controller/PetController";
 import router from "./routes";
 
 const app = express();
@@ -37,6 +39,11 @@ app.post("/pets", (_, res) => {
   const pet2 = criaPet(geraId(), "Mel", "gato", 2, false);
 
   res.send([pet1, pet2]);
+});
+
+app.get("/pets", (_, res) => {
+  const pets = new PetController();
+  res.send(pets.listaPets(_, res));
 });
 
 export default app;

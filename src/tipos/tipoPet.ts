@@ -1,9 +1,11 @@
+import EnumEspecie from "../enum/enumEspecie";
+
 type TipoPet = {
   id: number;
   nome: string;
-  especie: string;
+  especie: EnumEspecie;
   adotado: boolean;
-  idade: number;
+  dataNascimento: Date;
 };
 
 export default TipoPet;

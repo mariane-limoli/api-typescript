@@ -1,8 +1,15 @@
-import AdotanteEntity from "../entities/AdotanteEntity";
+import { Repository } from "typeorm";
 
-// Replace '../path/to/AdotanteEntity' with the actual path to the AdotanteEntity file
-// AdotanteRepository.ts
-export class AdotanteRepository {
+import AdotanteEntity from "../entities/AdotanteEntity";
+import InterfaceAdotanteRepository from "./interfaces/InterfaceAdotanteRepository";
+
+export default class AdotanteRepository implements InterfaceAdotanteRepository {
+  private repository: Repository<AdotanteEntity>;
+
+  constructor(repository: Repository<AdotanteEntity>) {
+    this.repository = repository;
+  }
+
   async criaAdotante(adotante: AdotanteEntity): Promise<void> {
     await this.repository.save(adotante);
   }

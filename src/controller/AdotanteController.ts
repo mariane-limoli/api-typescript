@@ -1,29 +1,15 @@
-import { Request, Response } from 'express';
+import { Request, Response } from "express";
 
-import AdotanteEntity from '../entities/AdotanteEntity';
+import AdotanteEntity from "../entities/AdotanteEntity";
+import AdotanteRepository from "../repositores/AdotanteRepository";
 
-// AdotanteController.ts
-export async function criaAdotante(req: Request, res: Response) {
-    try {
-        const { nome, celular, endereco, foto, senha } = <AdotanteEntity>req.body;
+export default class AdotanteController {
+  constructor(private repository: AdotanteRepository) {}
 
-        const novoAdotante = new AdotanteEntity(
-            nome,
-            senha,
-            celular,
-            foto,
-            endereco
-        );
-
-        await this.repository.criaAdotante(novoAdotante);
-        return res.status(201).json(novoAdotante);
-    } catch (error) {
-        return res.status(500).json({ error: 'Erro ao criar o adotante' });
-    }
-}
+  async criaAdotante(req: Request, res: Response) {
     try {
       const { nome, celular, endereco, foto, senha } = <AdotanteEntity>req.body;
-  
+
       const novoAdotante = new AdotanteEntity(
         nome,
         senha,
@@ -31,11 +17,11 @@ export async function criaAdotante(req: Request, res: Response) {
         foto,
         endereco
       );
-  
+
       await this.repository.criaAdotante(novoAdotante);
       return res.status(201).json(novoAdotante);
     } catch (error) {
-      return res.status(500).json({ error: 'Erro ao criar o adotante' });
+      return res.status(500).json({ error: "Erro ao criar o adotante" });
     }
   }
-  
+}

@@ -1,4 +1,7 @@
 import { Request, Response } from 'express';
+
+import AdotanteEntity from '../entities/AdotanteEntity';
+
 // AdotanteController.ts
 export async function criaAdotante(req: Request, res: Response) {
     try {

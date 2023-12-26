@@ -1,4 +1,4 @@
-import { AdotanteEntity } from "../path/to/AdotanteEntity";
+import AdotanteEntity from "../entities/AdotanteEntity";
 
 // Replace '../path/to/AdotanteEntity' with the actual path to the AdotanteEntity file
 // AdotanteRepository.ts

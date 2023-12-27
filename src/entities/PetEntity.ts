@@ -12,21 +12,20 @@ export default class PetEntity {
   @Column()
   especie: EnumEspecie;
   @Column()
-  adotado: boolean;
+  dataDeNascimento: Date;
   @Column()
-  dataNascimento: Date;
+  adotado: boolean;
   @ManyToOne(() => AdotanteEntity, (adotante) => adotante.pets)
   adotante!: AdotanteEntity;
-
   constructor(
     nome: string,
     especie: EnumEspecie,
-    adotado: boolean,
-    dataNascimento: Date
+    dataDeNascimento: Date,
+    adotado: boolean
   ) {
     this.nome = nome;
     this.especie = especie;
+    this.dataDeNascimento = dataDeNascimento;
     this.adotado = adotado;
-    this.dataNascimento = dataNascimento;
   }
 }

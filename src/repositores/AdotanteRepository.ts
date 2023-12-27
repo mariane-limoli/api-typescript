@@ -10,7 +10,7 @@ export default class AdotanteRepository implements InterfaceAdotanteRepository {
     this.repository = repository;
   }
 
-  async criaAdotante(adotante: AdotanteEntity): Promise<void> {
-    await this.repository.save(adotante);
+  criaAdotante(adotante: AdotanteEntity): void | Promise<void> {
+    this.repository.save(adotante);
   }
 }

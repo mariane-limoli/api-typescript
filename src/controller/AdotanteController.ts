@@ -21,6 +21,8 @@ export default class AdotanteController {
       await this.repository.criaAdotante(novoAdotante);
       return res.status(201).json(novoAdotante);
     } catch (error) {
+      console.log(error);
+      console.log(req.body);
       return res.status(500).json({ error: "Erro ao criar o adotante" });
     }
   }
